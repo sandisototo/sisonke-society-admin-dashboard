@@ -1,0 +1,55 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport="true"
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="!(isHandset$ | async)">
+    <div class="image_outer_container">
+      <div class="green_icon"></div>
+      <div class="image_inner_container">
+        <img src="assets/img/default-user.png">
+        <mat-toolbar>Sandiso Toto &nbsp; <span style="font-size: 12px;">(Admin)</span></mat-toolbar>
+      </div>
+    </div>
+    <mat-nav-list>
+      <a mat-list-item [routerLink]="['/dashboard']">
+        <mat-icon>home</mat-icon>&nbsp; Home
+      </a>
+      <a mat-list-item [routerLink]="['/documents']">
+          <mat-icon>file_copy</mat-icon>&nbsp; Documents
+        </a>
+      <mat-toolbar>Management</mat-toolbar>
+      <div style="margin-left: 10%">
+        <a mat-list-item [routerLink]="['/clients']">
+          <mat-icon>group</mat-icon> &nbsp;Clients
+        </a>
+        <a mat-list-item [routerLink]="['/loans']">
+          <mat-icon>money</mat-icon> &nbsp;Loans
+        </a>
+      </div>
+      <a mat-list-item href="#">
+          <mat-icon>settings</mat-icon> &nbsp;Settings
+        </a>
+        <a mat-list-item href="#">
+            <mat-icon>arrow_back</mat-icon> &nbsp;Logout
+          </a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span [routerLink]="['/dashboard']">Admin Dashboard</span>
+      <span class="menu-spacer"></span>
+      <div>
+        <a mat-button [routerLink]="'/clients'"> Clients </a>
+        <a mat-button [routerLink]="'/loans'"> Loans</a>
+        <a mat-button [routerLink]="'/documents'"> Documents </a>
+        <a mat-button [routerLink]="'/create-contact'"> Create Contact </a>
+        <a mat-button [routerLink]="'/activities'"> Activities </a>
+        <a mat-button [routerLink]="'/create-activity'"> Create Activity </a>
+      </div>
+    </mat-toolbar>
+    <!-- Add Content Here -->
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

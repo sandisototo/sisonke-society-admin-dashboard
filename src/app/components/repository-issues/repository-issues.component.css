@@ -1,0 +1,36 @@
+.loading { 
+    padding-top: 10%; padding-left: 50%;
+}
+.mat-radio-button ~ .mat-radio-button {
+    margin-left: 16px;
+  }
+
+  .first-title {
+    font-size: 20px;
+    margin-bottom: auto;
+  }
+
+  .issue-list {
+    padding: 25px;
+    height: 100%;
+    overflow-y: scroll;
+  }
+
+  .move-down {
+    position: relative;
+    top:5px;
+  }
+  .mat-grid-tile.mat-grid-tile {
+    height: 100%!important;
+  }
+  mat-list.issue-list.mat-list.mat-list-base {
+    width: 100%;
+    height: 100%;
+  }
+  .container {
+    margin-left: 1em;
+    margin-right: 1em;
+  }
+  .grid-list {
+    margin-top: 10%;
+  }
